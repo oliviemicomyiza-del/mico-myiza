@@ -1,0 +1,204 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  display: flex;
+  min-height: 100vh;
+  background: #f3f4f6;
+}
+
+/* =======================
+   SIDEBAR
+======================= */
+.sidebar {
+  width: 230px;
+  background: #1f2937;
+  color: white;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.logo {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 22px;
+}
+
+.sidebar a {
+  color: white;
+  text-decoration: none;
+  padding: 14px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sidebar a:hover {
+  background: #374151;
+}
+
+/* =======================
+   MAIN CONTENT
+======================= */
+.main {
+  flex: 1;
+  padding: 20px;
+}
+
+.page {
+  display: none;
+}
+
+.page.active {
+  display: block;
+}
+
+/* =======================
+   CARDS
+======================= */
+.cards {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: white;
+  padding: 20px;
+  width: 220px;
+  border-radius: 15px;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+.card i {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.card:hover {
+  background: #e0e7ff;
+}
+
+/* =======================
+   TABLE
+======================= */
+table {
+  width: 100%;
+  background: white;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th, td {
+  padding: 12px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+/* =======================
+   FORM
+======================= */
+form {
+  background: white;
+  padding: 25px;
+  max-width: 350px;
+  border-radius: 15px;
+}
+
+input, button {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 12px;
+}
+
+button {
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #1d4ed8;
+}
+
+/* =======================
+   📱 MOBILE RESPONSIVE
+======================= */
+@media (max-width: 768px) {
+
+  body {
+    flex-direction: column;
+  }
+
+  /* SIDEBAR → TOP BAR */
+  .sidebar {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+  }
+
+  .logo {
+    display: none;
+  }
+
+  .sidebar a {
+    margin: 0;
+    padding: 10px;
+    font-size: 14px;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  /* MAIN */
+  .main {
+    padding: 15px;
+  }
+
+  /* CARDS */
+  .cards {
+    flex-direction: column;
+  }
+
+  .card {
+    width: 100%;
+  }
+
+  /* TABLE → SCROLL */
+  table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  /* FORM */
+  form {
+    width: 100%;
+  }
+}
+
+/* =======================
+   📱 SMALL PHONES
+======================= */
+@media (max-width: 480px) {
+
+  .sidebar a {
+    font-size: 12px;
+  }
+
+  button {
+    font-size: 14px;
+  }
+}

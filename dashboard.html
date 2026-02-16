@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SIMS Dashboard</title>
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+
+<!-- SIDEBAR -->
+<aside class="sidebar">
+  <h2 class="logo">SIMS</h2>
+
+  <a href="#" onclick="showPage('dashboard')">
+    <i class="fa fa-home"></i> Dashboard
+  </a>
+
+  <a href="#" onclick="showPage('products')">
+    <i class="fa fa-box"></i> Products
+  </a>
+
+  <a href="#" onclick="showPage('add')">
+    <i class="fa fa-plus"></i> Add Product
+  </a>
+
+  <a href="#" onclick="logout()">
+    <i class="fa fa-sign-out-alt"></i> Logout
+  </a>
+</aside>
+
+<!-- MAIN CONTENT -->
+<main class="main">
+
+  <!-- DASHBOARD -->
+  <section id="dashboard" class="page active">
+    <h1>Dashboard</h1>
+
+    <div class="cards">
+      <div class="card" onclick="showPage('products')">
+        <i class="fa fa-box"></i>
+        <h3>Total Products</h3>
+        <p id="count">0</p>
+      </div>
+
+      <div class="card" onclick="showPage('add')">
+        <i class="fa fa-plus-circle"></i>
+        <h3>Add Product</h3>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCTS -->
+  <section id="products" class="page">
+    <h1>Products</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Quantity</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody id="productList"></tbody>
+    </table>
+  </section>
+
+  <!-- ADD PRODUCT -->
+  <section id="add" class="page">
+    <h1>Add Product</h1>
+
+    <form id="productForm">
+      <input type="text" id="name" placeholder="Product name" required>
+      <input type="number" id="qty" placeholder="Quantity" required>
+      <button type="submit">Add Product</button>
+    </form>
+  </section>
+
+</main>
+
+<script src="dashboard.js"></script>
+</body>
+</html>
